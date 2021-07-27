@@ -26,7 +26,7 @@ const MovieCart = () => {
      const MovieItem = ({ item }) => (
           <Col lg={3} md={4} sm={6} xs={12} className={'movieItem'} onClick={() => history.push(`/movie/${item.id}/details`)}>
                <CardComponent className={'movieCard'} des={item.overview}>
-                    <img src={`${IMAGE_URL}${item.poster_path}`} className={'movieImg'} />
+                    <img src={`${IMAGE_URL}${item.poster_path}`} className={'movieImg'} alt={item.overview} />
                     <div style={{ margin: '15px' }}>
                          <p style={{ fontSize: '15px', fontWeight: 'bold', color: '#000', textAlign: 'center' }}>
                               {item.original_title}
@@ -40,13 +40,13 @@ const MovieCart = () => {
                     </div>
                     <div className={'movieDes'}>
                          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                              <img src={IMDB} style={{ width: '30px', height: '20px' }} />
+                              <img src={IMDB} style={{ width: '30px', height: '20px' }} alt={item.vote_average} />
                               <p style={{ fontSize: '12px', fontWeight: 'bold', color: '#000', marginTop: '5px' }}>
                                    {item.vote_average}
                               </p>
                          </div>
                          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                              <img src={STAR} style={{ width: '20px', height: '20px' }} />
+                              <img src={STAR} style={{ width: '20px', height: '20px' }} alt={item.vote_count} />
                               <p style={{ fontSize: '12px', fontWeight: 'bold', color: '#000', marginTop: '5px' }}>{item.vote_count}</p>
                          </div>
                     </div>
